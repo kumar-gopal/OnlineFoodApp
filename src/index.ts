@@ -1,9 +1,11 @@
 import express from 'express';
+import dotenv from "dotenv";
+dotenv.config();
 import { adminRoutes, vandorRoutes } from './routes';
 import { dbconnect } from './config/dbconnection';
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
